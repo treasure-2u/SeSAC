@@ -1,0 +1,45 @@
+<!-- 주석 단축키 : ctrl(cmd) + / -->
+<!-- 코드 이해를 위한 브라우저에서는 보이지 않는 메모 -->
+<!-- ! 누르고 taㅠ or enter 하면 html 기본 구조 자동 완성-->
+<!-- opening tag = start tag = 여는 태그 = 시작 태그 -->
+<!-- 들여쓰기 = tab, 내어쓰기 = shift + tab -->
+<!-- 부모의 직계 => 자식 요소/그 외 => 하위 요소 -->
+<!-- 빈 태그 = 닫는 태그 존재 X/편리함, 불안전하기 때문에 /하여 self closing 하기 -->
+<!DOCTYPE html>
+<!-- html5 타입의 문서 작성 의미/Document type의 약자, 웹 문서의 작성 형식 선언 -->
+<html lang="ko"> <!-- 영어=en, 한글=ko -->
+    <head> <!-- 직접 노출 안되는 내부 정보들(페이지, 스타일 정보) -->
+        <meta charset="UTF-8"/>
+        <!-- 인코딩(작성된 코드 컴퓨터 이해할 수 있도록 바꾸는 것)
+            인코딩 방식 지정/태그+속성 -->
+        <title>SeSAC GD DT 3rd Portfolio</title>
+    </head>
+    <!-- start tag, end tag between content 작성 -->
+    <body> <!-- 브라우저 내 직접 표시되는 내용 -->
+        <h1> <!-- heading의 약자, 한 번에 하나의 태그만 사용 권장, 크고 두꺼운 제목 -->
+            Figma project D조 <!-- shift + option + down 방향키 : 내용 복사됨 -->
+        </h1>
+        <h2>RARAT</h2>
+        <h3>이유진, 윤경수, 이소정, 사르나</h3>
+        <h4>기온별 옷차림 쇼핑몰</h4>
+        <h5>어라의 감탄사에서 착안</h5>
+        <h6>메인컬러 : 파란색</h6>
+        <p> <!-- 본문 내용 -->
+            html이란 hypertext Markup Language의 약자입니다.</p>
+        <br /> <!-- 문서 내 엔터 인식 안됨 - 무조건 줄바꿈 태그 사용하기 -->
+        <p>
+            closing tag는 <br /> <!-- 자식요소 가질 수 없는 빈태그 -->
+            self closing&nbsp&nbsp&nbsp해주기
+            <!-- &nbsp : 2칸 이상의 공백 넣을 때, non breaking spacebar -->
+        </p>
+        <!-- unorder link:순서 없는 목록/order link:순서 있는 목록 -->
+        <!-- div : 블록 요소, span : 인라인 요소 -->
+        <div style="background-color: blanchedalmond;">블랑서아몬드는 부모
+            <br />
+            <span style="background-color: burlywood;">블랑서아몬드의 자식</span>
+        </div>
+        <span style="background-color: aquamarine;">블랑서아몬드의 형제요소</span>
+        <!-- 같은 depth, or level에 있으면 형제 요소 -->
+    </body>
+</html>
+<!-- 중복 구조 허용 안됨 -->

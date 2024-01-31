@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tag란?</title>
+</head>
+<body>
+    <h2>Today's tag</h2>
+    <p>오늘 배운 tag 내용</p>
+    <br /><hr />
+    <ul type="none"> <!-- ul type : disc(default),square,circle,none -->
+        <!-- 순서가 없는 목록,
+            option + 화살표 = 코드 이동 가능
+            option + shift + 화살표 = 코드 그대로 복사 가능 -->
+        <li>html</li>
+        <li>meta</li>
+        <li>title</li>
+        <li>h</li>
+        <li>p</li>
+        <li>br</li>
+        <li>ul</li>
+        <li>ol</li>
+        <li>img</li>
+        <li>div</li>
+    </ul>
+    <ol>
+        <!-- ol:순서가 있는 목록 -->
+        <!-- ol의 type : 1(default), a, A, i, roma숫자 -->
+        <!-- ol의 start : 시작 값 지정 -->
+        <!-- ol의 reserve : 역순으로 지정 -->
+        <h2>오늘의 할 일</h2>
+        <li>과제하기</li>
+        <li>부스트캠프 html 강의 마무리</li>
+        <li>롤하기</li>
+        <li>포트폴리오 정리하기</li>
+        <li>웹디자인기능사 강의 듣기</li>
+    </ol>
+
+    <!-- list 중첩 -->
+    <ul type="none">
+        <h2>언어 카테고리</h2>
+        <li>컴퓨터 언어</li>
+            <ul>
+                <li>C언어</li>
+                <li>JAVA</li>
+                <li>JAVASCRIPT</li>
+                <li>Kotline</li>
+                <li>Ruby</li>
+                <li>Python</li>
+            </ul>
+        <li>세계의 언어</li>
+            <ul>
+                <li>한국어</li>
+                <li>영어</li>
+                <li>스페인어</li>
+                <li>중국어</li>
+                <li>불어</li>
+            </ul>
+        <li>동물의 언어</li>
+            <ul>    
+                <li>강아지어</li>
+                    <ul>
+                        <li>표정</li>
+                        <li>꼬리</li>
+                    </ul>
+                <li>고양이어</li>
+                    <ul>
+                        <li>표정</li>
+                        <li>꼬리</li>
+                    </ul>
+            </ul>
+            <br />
+            <hr />
+            <img src="./img/sea.jpg" alt="현무암으로 이루어진 파도치는 바다 사진" />
+            <br />
+            <!-- 위 : 상대 경로 = 현재 위치에서 불러올 이미지까지의 경로(.으로 시작)
+                /아래 : 절대경로(홈 위치에서 불러올 이미지까지의 경로(/로 시작)
+                => 파일구조가 다른 프로젝트여도 항상 열림, 오류 적음) -->
+            <img src="/SeSAC/0131_html/img/hero6.png" alt="오바워치 디바 얼굴 사진" />
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA4MTZfNDgg%2FMDAxNjkyMTIzOTkzMTIx.sZMzufcLIKKQisCBocwlSBtEWj53fyKMrOx-b52qVoQg.SbxJ4KWZRnPNtqM4pP23iL8iDGJxkop3FMot0zj64bwg.PNG.2dh_105%2Fimage.png&type=a340" alt="네이버 출처 : 디지몬어드벤처 캐릭터 팔몬" />
+            <br /><br />
+            <hr />
+            <!-- a : 하이퍼링크 태그 -->
+            <!-- a href : 연결할 URL -->
+            <!-- a의 target : _blank(새탭으로), _self(default) -->
+            <!-- a의 title : 마우스를 올리면(호버) 값을 보여줌 -->
+            <a href="https://naver.com" title="기본 target속성 값은 _self">naver</a>
+            <br />
+            <a href="https://op.gg" target="_blank">op.gg</a>
+            <br />
+            <a href="./01_html.html">my first html doc</a>
+            <br />
+</body>
+</html>
