@@ -1,3 +1,2 @@
 hello world
-
-abcdefghijklmnop
+# SeSAC X CoddingOn GD DT 3rd code memory
