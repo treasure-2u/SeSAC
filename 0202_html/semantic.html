@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic tag</title>
+  </head>
+  <body>
+    <!-- semantic web : 컴퓨터가 구성(해당 요소)의 의미(역할)를 이해할 수 있는 구조의 웹 -->
+    <!-- 중첩 많아도 해당 태그의 역할 쉽게 파악 가능으로 유지보수 측면, 검색 엔진 최적화에서도 이점 -->
+    <header style="height: 50px; background-color: papayawhip">
+      header
+      <nav style="height: 20px; background-color: peachpuff">nav</nav>
+    </header>
+    <!-- main tag는 한 번만 사용하도록! -->
+    <main style="height: 1000px; background-color: wheat; display: flex">
+      main
+      <!-- section 큰 부분 묶을 때, article은 내부의 주된 내용을 포함하는 공간으로 사용 -->
+      <section style="width: 80%; background-color: paleturquoise">
+        section
+        <article style="height: 100px; background-color: red">article</article>
+        <article style="height: 100px; background-color: orange">
+          article
+        </article>
+        <article style="height: 100px; background-color: yellowgreen">
+          article
+        </article>
+      </section>
+      <aside style="width: 20%; background-color: pink">aside</aside>
+    </main>
+    <footer style="height: 50px; background-color: palevioletred">
+      footer
+    </footer>
+  </body>
+</html>
+<!-- style 쓰지 않아도 크기 변경 가능?, 절대경로 -->

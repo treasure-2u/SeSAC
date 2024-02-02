@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML form site</title>
+  </head>
+  <body>
+    <h2>login을 진행하십시오.</h2>
+    <form>
+      <!-- form : 사용자의 입력을 받는 요소들의 집합 태그, 서버 통신 관련 속성 -->
+      <!-- form 태그 내부에 사용자의 입력 위한 태그 작성하면 서버에 전달하는 역할 -->
+      ID :
+      <!-- input : 사용자의 입력을 받는 태그, 열린 태그이므로 셀프클로징 필수 -->
+      <input type="text" />
+      <br />
+      <!-- label : for 속성을 통해 input tag와 연결 가능 -->
+      <!-- 해당 label click 시 연결된 input에 focus or check 가능 -> 사용자 편의성 증가 -->
+      <!-- label의 for와 input의 id가 동일하면 연결 성사, 순서 상관 없음, 하나의 id만 사용 가능 -->
+      <label for="text">text with label : </label>
+      <input type="text" id="text" />
+      <br />
+      <label for="email">e-mail</label>
+      <input type="email" id="email" placeholder="example@naver.com" />
+      <br />
+      <!-- label의 for 속성을 사용하지 않고 암시적으로 연결하는 방법 -->
+      <label>
+        password
+        <input type="password" />
+      </label>
+      <br />
+      <input type="checkbox" id="agree" checked />
+      <!-- input 속성 - disabled : 비활성화, checked : 자동으로 활성화 된 상태 -->
+      <label for="agree"> 동의합니다.</label>
+      <br /><br />
+      <h5>다음 중 input type이 아닌 것은? (모두 고르시오)</h5>
+      <input type="checkbox" id="check1" name="input" />
+      <label for="check1">text</label>
+      <input type="checkbox" id="check2" name="input" />
+      <label for="check2">click</label>
+      <input type="checkbox" id="check3" name="input" />
+      <label for="check3">bread</label>
+      <input type="checkbox" id="check4" name="input" />
+      <label for="check4">img</label>
+      <input type="checkbox" id="check5" name="input" />
+      <label for="check5">date</label>
+      <br /><br />
+      <!-- radio tag는 그룹 중 하나만 선택하는 역할의 타입/반드시 같은 name으로 그룹화 필수
+      하나만 선택되어야 하는 radio 기능이 그렇지 않으면 전부 선택됨(check도 마찬가지)
+       -->
+      <input type="radio" id="radio" name="radio" />
+      <label for="radio">radio type</label>
+      <input type="radio" id="radio2" name="radio" />
+      <label for="radio2">radio type2</label>
+      <input type="radio" id="radio3" name="radio" />
+      <label for="radio3">radio type3</label>
+      <br /><br />
+
+      <h5>다음 중 img 태그의 속성인 것은?</h5>
+      <input type="radio" id="title" name="img_quiz" />
+      <label for="title">title</label>
+      <input type="radio" id="alt" name="img_quiz" />
+      <label for="alt">alt</label>
+      <input type="radio" id="mouse" name="img_quiz" />
+      <label for="mouse">mouse</label>
+      <input type="radio" id="value" name="img_quiz" />
+      <label for="value">value</label>
+      <br /><br />
+
+      <label for="color">색상 선택 : </label>
+      <input type="color" id="color" />
+      <br /><br />
+
+      <label for="range">범위 지정 : </label>
+      <input type="range" id="range" />
+      <br /><br />
+
+      <label for="file">파일 업로드 : </label>
+      <input type="file" id="file" />
+      <br /><br />
+
+      <label for="number">숫자 입력 : </label>
+      <input type="number" id="number" />
+      <!-- number : 숫자 이외 값은 입력되지 않음, count버튼 자동생성 -->
+      <br /><br />
+
+      <label for="date">생년월일 입력 : </label>
+      <input type="date" id="date" />
+      <br /><br />
+
+      <label for="date-time">생년월일 입력(시간포함) : </label>
+      <input type="datetime-local" id="date-time" />
+      <br /><br />
+
+      <!-- 버튼 만들기 : input tag - button type과 submit type, button tag -->
+      <!-- 열린 태그이므로 내부에 자식 요소 생성 불가, 내부 content는 value 속성으로 부여 가능 -->
+      <input type="button" value="로그인" />
+      <input type="submit" value="회원가입" />
+      <!-- value 지정하지 않으면 "제출" 기본값, form 태그 내 모든 input값을 서버에 전송(JS없이) -->
+      <button style="color: blueviolet">소셜로그인</button>
+      <!-- button : 여는 태그와 닫는 태그 존재, 자유롭게 스타일링 및 활용 가능 -->
+      <br /><br />
+
+      <!-- cols : 가로, rows : 세로 너비 속성 -->
+      <label for="textarea">SeSAC GD DT 3기 만족도 설문조사</label>
+      <br />
+      <textarea
+        id="textarea"
+        cols="130"
+        rows="10"
+        placeholder="만족했던 점과 불만족한 점에 대해 입력해주세요."
+      ></textarea>
+      <br /><br />
+
+      <select name="position">
+        <optgroup label="주포지션">
+          <option value="top">탑</option>
+          <option value="mid">미드</option>
+          <option value="jg">정글</option>
+        </optgroup>
+        <optgroup label="바텀포지션">
+          <option value="ad">원딜</option>
+          <option value="sup">서폿</option>
+        </optgroup>
+      </select>
+      <br /><br />
+    </form>
+  </body>
+</html>
