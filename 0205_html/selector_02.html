@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>복합 선택자</title>
+    <style>
+      header {
+        height: 70px;
+        background-color: lightgray;
+      }
+      section {
+        border: 5px solid lightpink;
+      }
+      article {
+        border: 5px solid lightblue;
+      }
+      header > h1 {
+        color: lightslategray;
+        text-align: center;
+      }
+      .lol > h2 {
+        background-color: aqua;
+      }
+      .overwatch > h2 {
+        background-color: lightgoldenrodyellow;
+      }
+      main > .lol > article > span,
+      .overwatch article span {
+        /* 연산자 안쓰거나 > 섞어서 사용 가능 */
+        /* 여러 개의 요소 한 번에 스타일 지정 가능 */
+        font-size: 30px;
+        color: darkcyan;
+        border: 5px dotted red;
+        /* selector가 자세할 수록 우선순위 높아짐 */
+      }
+      .overwatch li {
+        /* .overwatch > li 안되는 이유는 직계 자식이 아니기 때문 */
+        font-size: 50px;
+        background-color: lightgreen;
+        color: lightsalmon;
+      }
+      main .overwatch article ul #healer {
+        color: gold;
+      }
+      .ad + li {
+        /* 인접 형제 선택자 */
+        color: lightcoral;
+      }
+      #healer ~ li {
+        /* 일반 형제 선택자 */
+        background-color: azure;
+      }
+      li#healer {
+        /* id or class 내 특정 요소만 선택 */
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>복합선택자 practice</h1>
+    </header>
+    <main>
+      <section class="lol">
+        <h2>League of Legend</h2>
+        <article>
+          <span>Champion</span>
+          <ul>
+            <li>smolder</li>
+            <li>lux</li>
+            <li>nami</li>
+            <li class="ad">jin</li>
+            <li>janna</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="overwatch">
+        <h2>OverWatch</h2>
+        <article>
+          <span>Champion</span>
+          <ul>
+            <li>Diva</li>
+            <li id="healer">mercy</li>
+            <li>orisa</li>
+            <li>mei</li>
+            <li>soldier</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

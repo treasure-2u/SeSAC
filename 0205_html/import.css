@@ -1,0 +1,18 @@
+li {
+  background-color: paleturquoise;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: lightcyan;
+  text-decoration: none;
+}
+
+span {
+  background-color: orange;
+  color: rgb(0, 0, 256);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- html : head + body 두 개의 tag만 존재 -->
+  <!-- head : 브라우저에서 보이지 않는 부분, body : 브라우저에 직접적으로 보이는 부분 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 참조 방법</title>
+    <!-- 내장 style : head tag 내부에 style tag styling -->
+    <style>
+      /* html과 주석 모양이 다름 */
+      /* 1. background-color : 배경색 지정, 2. color : 글자색 지정, 3. width, 4. height */
+      /* 색상 지정 : 1. hex-code(#6 text), 2. color name - ex.black,
+      3. rgb(num,num,num) - red, green, blue(0~256),
+      4. rgba(num,num,num,num) : rgb + 투명도(0~1) */
+      h2 {
+        color: pink;
+      }
+      p {
+        background-color: lightpink;
+      }
+      li {
+        color: lightsalmon;
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h2>CSS style 적용 방법 3가지</h2>
+    <!-- inline : open tag에 style 속성을 부여하여 styling -->
+    <!-- 여러 css styling 시 ;으로 나누어 작성 -->
+    <div style="background-color: lightyellow">inline style</div>
+    <p>내장 style</p>
+    <ul>
+      <li style="color: lightcoral">외부 css style 시트</li>
+    </ul>
+  </body>
+</html>

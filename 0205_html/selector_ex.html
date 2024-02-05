@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>복합선택자 실습</title>
+    <style>
+      #tiger {
+        background-color: yellow;
+      } /* 호랑이만 선택, 배경을 노란색 */
+      p.lion {
+        background-color: red;
+      } /* 야생의 사자만 선택, 배경을 빨간색 */
+      ul > .lion {
+        background-color: greenyellow;
+        font-weight: 900;
+      } /* 사파리 안의 사자만 선택, 배경을 greenyellow, 폰트 900 굵기 */
+      p.lion,
+      span.lion,
+      li.lion {
+        color: sienna;
+      } /* 모든 사자를 선택하여 sienna 글자색 변경 */
+      #tiger + li {
+        background-color: skyblue;
+      } /* 호랑이 다음에 있는 팬더 배경을 하늘색 */
+      li.lion ~ li {
+        background-color: orange;
+      } /* 사자 다음 모든 요소를 오렌지 배경 컬러로 */
+
+      h1:hover {
+        color: red;
+      }
+
+      a:active {
+        background-color: blue;
+      }
+
+      input:focus {
+        background-color: orange;
+      }
+
+      /* stripes practice */
+      /* 우선순위를 활용한 방법
+      .stripes > * {
+        background-color: navy;
+        color: white;
+      } */
+      .stripes *:nth-child(2n) {
+        background-color: yellow;
+        color: black;
+      }
+      .stripes *:nth-child(2n-1) {
+        background-color: navy;
+        color: white;
+      }
+
+      .box:before {
+        content: "택시 ";
+      }
+      .box:after {
+        content: " 빨리";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>복합선택자 사용 연습</h2>
+    <p>동물원에 왔어요</p>
+    <div class="zoo">
+      <ul>
+        <span>여긴 사파리!</span>
+        <li>곰</li>
+        <li id="tiger">호랑이</li>
+        <li>팬더</li>
+        <span class="lion">사자1</span>
+        <li class="lion">사자2</li>
+        <li>사육사 layla</li>
+        <li>사육사 레일라</li>
+      </ul>
+      <span class="lion"> 사파리 밖의 사자</span>
+    </div>
+    <p class="lion">야생의 사자</p>
+    <br /><br /><br />
+
+    <h1>h1 tag</h1>
+    <a href="#">a tag</a>
+    <!-- # : 현재 페이지로 이동 -->
+    <input type="text" />
+    <hr />
+    <br /><br /><br />
+
+    <div class="stripes">
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+      <div>navy</div>
+      <div>yellow</div>
+    </div>
+    <hr />
+    <br /><br /><br />
+
+    <div2 class="box">여기요!</div2>
+  </body>
+</html>

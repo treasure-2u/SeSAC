@@ -1,0 +1,19 @@
+@import url("./import.css");
+/* import css file에서 another css file 불러오는 것 */
+li {
+  color: palevioletred;
+}
+
+li {
+  color: lightsalmon;
+}
+
+p {
+  background-color: rgb(256, 0, 0);
+  color: #ffffff;
+}
+
+h3 {
+  background-color: #000000;
+  color: #ffffff;
+}

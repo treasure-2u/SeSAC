@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 요소 선택자&가상 클래스 선택자</title>
+    <style>
+      /* 가상 클래스 선택자 : hover, active, visited, focus,,, */
+      /* 가상 요소 선택자 : :first-child, :last-child, :nth-child(), not(xyz) */
+      .div1 {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        background-color: lightcyan;
+      }
+      /* E:hover {} : 요소에 마우스가 올라가 있는 동안 E를 선택 */
+      .div1:hover {
+        background-color: lightskyblue;
+        height: 150px;
+      }
+
+      /* E:active {} : 요소에 마우스 클릭 또는 키보드 에너가 눌린 동안 E를 선택 */
+      .div1:active {
+        background-color: lightpink;
+        width: 150px;
+        /* hover된 채로 클릭하면 높이 유지됨, 우선순위는 둘이 같기 때문에 나중에 작성된 active가 발동 */
+      }
+
+      /* E:focus {} : 요소에 포커스가 머물러 있는 동안 E 선택 (주로 input에서 사용) */
+      input:focus {
+        background-color: cornsilk;
+        width: 50px;
+        outline-color: cornflowerblue;
+      }
+
+      /* E:visited {} : 링크 요소일 때 해당 링크 방문 경험이 있을 때 스타일 지정 가능 */
+      .links > a:visited {
+        color: lightsalmon;
+      }
+
+      /* E:checked {} : 요소에 체크가 되었을 때 (input type = radio or checkbox) 스타일 지정 가능 */
+
+      .links a {
+        font-size: 25px;
+        font-weight: 900;
+        color: black;
+        background-color: darksalmon;
+      }
+      .links > a:active {
+        color: cornflowerblue;
+      }
+
+      .talesrunner {
+        background-color: lightgoldenrodyellow;
+      }
+      .talesrunner *:first-child {
+        background-color: yellow;
+      }
+      .talesrunner *:last-child {
+        background-color: lightskyblue;
+      }
+      .talesrunner *:nth-child(2n) {
+        background-color: lightsalmon;
+        /* 지정한 요소 중 괄호 내 연산자에 해당하는 요소들을 포함하여 변경됨 */
+      }
+      .talesrunner *:not(li) {
+        color: white;
+      }
+
+      /* 가상 요소 선택자 : before, after/ content 필수 사용 */
+      .div2:before {
+        /* before : new, hot of shopping mall 주로 사용됨
+        선택된 요소의 content 앞에 해당 content 값이 들어감 */
+        content: "before 가상 selector 입력 text";
+        color: white;
+      }
+      .div2:hover {
+        content: "밍";
+      }
+      .div2:after {
+        /* after : 선택된 요소의 content 앞에 해당 content 값이 들어감 */
+        content: "after 속성";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <span>div1</span>
+    </div>
+
+    <input type="text" />
+    <div class="links">
+      <a href="https://www.op.gg" target="_blank">op.gg</a>
+      <a href="https://www.naver.com" target="_blank">naver</a>
+      <a href="https://google.co.kr" target="_blank">google</a>
+    </div>
+    <hr />
+    <br /><br />
+
+    <ul class="talesrunner">
+      <h1>talesrunner</h1>
+      <div>chowon</div>
+      <li>mingming</li>
+      <li>bigbo</li>
+      <li>RnD</li>
+      <li>yuki</li>
+      <li>rina</li>
+    </ul>
+  </body>
+</html>
