@@ -1,0 +1,149 @@
+.px {
+  width: 100px;
+  height: 100px;
+  background-color: lightpink;
+}
+
+/* 부모요소의 font-size가 기준점이라 점점 크기가 커지는 코드 */
+.em_text {
+  font-size: 2em;
+}
+
+/* rem : root(html)의 font-size가 기준이며 중첩이어도 영향 X */
+/* html의 font-size 지정 안하면 기본적으로 1rem = 16pxS */
+.rem_text {
+  font-size: 2rem;
+}
+
+/* em, rem font-size attribute에만 사용하는 것 아님 */
+.em {
+  width: 10em;
+  height: 10em;
+  background-color: lightblue;
+}
+
+.em_parents {
+  font-size: 10px;
+  background-color: violet;
+}
+
+.rem {
+  width: 10rem;
+  height: 10rem;
+  background-color: lightsteelblue;
+}
+
+.rem_parents {
+  font-size: 30px;
+  background-color: lightgoldenrodyellow;
+}
+
+/* percent_parents 부모 요소가 body tag이기 때문에 그것이 기준이 됨 */
+.percent_parents {
+  width: 70%;
+  background-color: palegreen;
+}
+.percent {
+  width: 50%;
+  background-color: palevioletred;
+}
+
+.vh {
+  width: 30vh;
+  height: 30vh;
+  background-color: lightsalmon;
+}
+
+.vw {
+  width: 30vw;
+  height: 30vw;
+  background-color: peachpuff;
+}
+
+/* display: block; -> div 요소의 기본 속성값 */
+.d-block {
+  background-color: lightcyan;
+  border: 1px solid lightblue;
+  width: 100px;
+  height: 100px;
+}
+
+/* display: inline; -> span 요소의 속성 기본값 */
+/* = hug of figma,
+inline 요소는 content의 크기에 맞춰 너비 높이 지정됨(임의로 content 너비와 높이 지정 불가) */
+.d-inline {
+  background-color: lightgreen;
+  border: 1px solid green;
+  width: 100px;
+  height: 100px;
+}
+
+/* inline 요소처럼 content 크기에 딱 맞춰 너비 높이 지정되나 block 요소처럼 width와 height를 지정 가능 */
+.d-inline-block {
+  display: inline-block;
+  border: 1px solid peachpuff;
+  font-size: 30px;
+  width: 200px;
+  height: 200px;
+}
+
+.parent {
+  width: 500px;
+  height: 200px;
+  background-color: lightpink;
+}
+
+.min {
+  /* 최소 넓이이므로 400px 이상은 가능하나 그 이하는 불가 */
+  min-width: 400px;
+  height: 100px;
+  background-color: blueviolet;
+}
+
+.max {
+  /* 최대 넓이이므로 400px보다 축소는 되나 확대는 불가 */
+  max-width: 400px;
+  height: 100px;
+  background-color: yellow;
+}
+/* height도 동일, but max-width,height , min-width,heigh는 반응형 웹페이지 주로 사용되어 width 기반으로 쓰임 */
+
+.header {
+  height: 130px;
+  background-color: aquamarine;
+}
+.calc {
+  width: calc(100vw - 300px);
+  height: calc(100vh - 130px);
+  background-color: lightseagreen;
+}
+
+/* box sizing */
+/* 요소의 크기에 대한 계산 기준을 지정하는 속성 */
+.box-sizing {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+}
+
+.content-box {
+  box-sizing: content-box;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.style {
+  border-width: 5px 10px 15px 20px;
+  border-style: solid dotted double dashed;
+  border-color: blue darkblue blueviolet violet;
+  border-top-right-radius: 50%;
+}
+
+.border {
+  width: 100px;
+  height: 100px;
+}

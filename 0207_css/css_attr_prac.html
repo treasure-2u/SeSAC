@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css_attr.css" />
+    <style>
+      .div {
+        width: auto;
+        height: 200px;
+        background-color: orange;
+      }
+      .div * {
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin-right: 50px;
+      }
+      .html {
+        background-color: skyblue;
+      }
+      .css {
+        background-color: green;
+      }
+      .js {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <span class="html">HTML</span>
+      <span class="css">CSS</span>
+      <span class="js">Javascript</span>
+    </div>
+    <br />
+    <hr />
+
+    <h2>max-width, min-width</h2>
+    <div class="parent">
+      <div class="min"></div>
+      <div class="max"></div>
+    </div>
+    <br />
+    <hr />
+
+    <div class="border style">on the border</div>
+  </body>
+</html>

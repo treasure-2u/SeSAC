@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS attribute</title>
+    <link rel="stylesheet" href="./css_attr.css" />
+  </head>
+  <body>
+    <h2>size 단위</h2>
+
+    <div class="px">100px</div>
+
+    <div class="em_text">
+      em1
+      <div class="em_text">
+        em2
+        <div class="em_text">em3</div>
+      </div>
+    </div>
+
+    <div class="rem_text">
+      rem1
+      <div class="rem_text">
+        rem2
+        <div class="rem_text">rem3</div>
+      </div>
+    </div>
+
+    <div class="em">10em</div>
+
+    <div class="em_parents">
+      em 부모요소 font-size: 10px
+      <div class="em">10em</div>
+    </div>
+
+    <div class="rem">10rem</div>
+
+    <div class="rem_parents">
+      rem 부모요소 font-size: 30px
+      <div class="rem">10rem</div>
+    </div>
+
+    <div class="percent_parents">
+      %부모요소 300px
+      <div class="percent">50%</div>
+    </div>
+
+    <div class="vh">30vh</div>
+    <div class="vw">30vw</div>
+    <br />
+    <hr />
+
+    <h2>display attribute</h2>
+    <div class="d-block">block1</div>
+    <div class="d-block">block2</div>
+    <div class="d-block">block3</div>
+    <div class="d-block">block4</div>
+    <br /><br />
+
+    <span class="d-inline">inline1</span>
+    <span class="d-inline">inline2</span>
+    <span class="d-inline">inline3</span>
+    <span class="d-inline">inline4</span>
+    <br /><br />
+
+    <!-- cmd(ctrl) + d = 같은 글자 요소 선택 가능, 나가기 : esc -->
+    <div class="d-inline-block">inline-block1</div>
+    <div class="d-inline-block">inline-block2</div>
+    <div class="d-inline-block">inline-block3</div>
+    <div class="d-inline-block">inline-block4</div>
+
+    <!-- inline 요소의 자식으로 block 요소가 들어오면 레이아웃 깨지기 때문에 사용 x -->
+    <span style="border: 5px solid lightcoral"
+      >span
+      <div style="background-color: cornflowerblue">div</div></span
+    >
+    <br />
+
+    <div class="header">header</div>
+    <div class="calc">calc use</div>
+    <br />
+    <hr />
+
+    <!-- 박스 사이징 -->
+    <div class="box-sizing content-box">content-box</div>
+    <div class="box-sizing border-box">border-box</div>
+  </body>
+</html>

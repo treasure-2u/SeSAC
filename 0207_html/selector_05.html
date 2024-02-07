@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attribute selector</title>
+    <style>
+      /* 속성만 작성하는 경우 해당 속성의 모든 요소들이 선택됨 */
+      [disabled] {
+        background-color: red;
+      }
+      [placeholder] {
+        background-color: white;
+      }
+      /* 속성값 같이 작성 시 해당 속성 and 속성값 가진 요소 선택(속성값만 선택은 불가) */
+      [type="password"] {
+        font-size: 30px;
+      }
+      [class="square"] {
+        /* = .square 호출과 같은 의미, 같은 우선순위 */
+        /* 클래스 선택자 대신 속성 선택자를 이용해 스타일링 가능하나 번거로워서 주로 사용 안함 */
+        background-color: lightcyan;
+      }
+      [href="#"] {
+        /* = href 호출과 같은 내용(요소의 모든 속성을 선택 가능) */
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="input text1" />
+    <input type="text" placeholder="input text2" />
+    <input type="text" placeholder="input text3" disabled />
+    <input type="password" placeholder="input your password" />
+
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </body>
+</html>

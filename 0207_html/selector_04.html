@@ -1,0 +1,31 @@
+<!-- #은 id 호출자, 없으면 새로고침(현재 페이지에 머무른다) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content article {
+        height: 500px;
+        border: 5px solid blue;
+      }
+      #detail {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 가상클래스 not() 안에 class name:firstchild 이런 거 들어갈 수 있는지? -->
+    <section>
+      <a href="#detail">상세정보</a>
+      <a href="#review">후기</a>
+      <a href="#comunity">커뮤니티</a>
+    </section>
+    <section class="content">
+      <article id="detail">여기는 상세정보 내용</article>
+      <article id="review">여기는 후기 내용</article>
+      <article id="comunity">여기는 커뮤니티 내용</article>
+    </section>
+  </body>
+</html>
