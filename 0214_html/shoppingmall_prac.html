@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>slowand</title>
+    <style>
+      .ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        height: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .fixed-tap {
+        position: sticky;
+        top: 0;
+        background-color: lightpink;
+      }
+
+      .top-btn {
+        position: fixed;
+        height: 500px;
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        background-color: skyblue;
+      }
+    </style>
   </head>
   <body>
     <main>
       <section class="product-info">section 1</section>
+      <input type="text" placeholder="검색" />
       <section class="product-info-detail">
         <div class="fixed-tab">
           <ul>
@@ -20,5 +51,8 @@
       </section>
     </main>
     <a href="#" class="top-btn">위로</a>
+    <!-- outline과 border의 차이점 : https://blog.naver.com/iyakiggun/100159740947 -->
+    <!-- input:hover:not(input:focus) 포커스 제외 사용자가 무언가를 할 수 있는 요소구나 알 수 있음 -->
+    <!-- display:inline-block = flex -->
   </body>
 </html>

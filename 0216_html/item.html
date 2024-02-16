@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: whitesmoke;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: center;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        /* flex-basis: 200px; */
+      }
+      .item1 {
+        background-color: lightcoral;
+      }
+      .item2 {
+        background-color: lightpink;
+      }
+      .item3 {
+        background-color: lightsalmon;
+        /* order: 속성 부여된 item들에만 유의미, 숫자 작을수록 우선순위 높게 배열됨 */
+        order: 4;
+      }
+      .item4 {
+        background-color: lightyellow;
+        order: 3;
+        flex-grow: 1;
+      }
+      .item5 {
+        background-color: lightgreen;
+        order: 5;
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .container>.item.item$*3{$} =
+    <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+    </div> -->
+    <div class="container">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+    </div>
+  </body>
+</html>

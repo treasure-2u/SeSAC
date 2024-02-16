@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>header</title>
+    <link rel="shortcut icon" href="./grass.png" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .header {
+        /* header 전체 속성 */
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: lightgray;
+      }
+
+      ul {
+        /* header3을 위한 코드 */
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+        /* menu를 묶기 위한 코드 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav2 {
+        /* header4 오른쪽 메뉴 두 개 붙이기 위한 코드 */
+        width: 10%;
+      }
+
+      .grass {
+        /* logo 크기 조절 */
+        width: 40px;
+        height: 40px;
+      }
+
+      .search:hover:not(.search:focus) {
+        /* hover할 때 색을 줌으로써 가시성을 높여 사용자의 편리성 높임 */
+        background-color: whitesmoke;
+      }
+
+      h1 {
+        /* 실습 내용 관련 title */
+        color: green;
+        text-align: center;
+        margin: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>grass header practice</h1>
+    <header class="header">
+      <img class="grass" src="./grass.png" alt="푸릇푸릇 잔디밭" />
+      <ul class="nav">
+        <input
+          class="search"
+          type="text"
+          maxlength="10"
+          placeholder="search"
+          autofocus
+        />
+        <div class="login">Login</div>
+        <div class="mypage">Mypage</div>
+      </ul>
+    </header>
+    <br />
+
+    <header class="header">
+      <img class="grass" src="./grass.png" alt="푸릇푸릇 잔디밭" />
+      <ul class="nav">
+        <li>OUTER</li>
+        <li>TOP</li>
+        <li>BOTTOM</li>
+      </ul>
+      <div class="mypage">Mypage</div>
+    </header>
+    <br />
+
+    <header class="header">
+      <ul>
+        <li>Logo</li>
+        <li>MENU</li>
+        <li>LOGIN</li>
+      </ul>
+    </header>
+    <br />
+
+    <header class="header">
+      <ul class="nav">
+        <li><img class="grass" src="./grass.png" alt="푸릇푸릇 잔디밭" /></li>
+        <li>MENU1</li>
+        <li>MENU2</li>
+        <li>MENU3</li>
+      </ul>
+      <ul class="nav nav2">
+        <li>LOGIN</li>
+        <li>SIGNUP</li>
+      </ul>
+    </header>
+  </body>
+</html>

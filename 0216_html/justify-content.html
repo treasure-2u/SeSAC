@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display: flex</title>
+    <style>
+      .container {
+        /* justify-content: flex-start(default) -> 주축 item의 정렬 배치 방법, start가 기준점*/
+        /* justify-content: flex-end -> end가 나열의 기준점 */
+        /* space-around -> 아이템의 모든 여백이 동일하도록 지정(양팔 나란히) */
+        /* space-evenly -> (start~end 모든 지점과 아이템 사이의 여백까지)모든 간격이 동일 */
+        /* space-between -> start, :end 아이템에는 여백이 없고 나머지 아이템 사이 간격이 동일 */
+
+        /* align-items: -> 교차축 기준 item 배치 방법 */
+        /* align-items: stretch; (default) -> container의 교차축을 전부 채우기 위해 늘어남 */
+        /* align-items: flex-start -> 교차축의 시작점으로 정렬(item의 높이너비가 지정될 시 자동) */
+        /* align-items: flex-end -> 교차축의 끝점으로 정렬 */
+        /* align-items: center -> 교차축의 중앙으로 정렬 */
+        /* align-items: baseline -> item text의 밑줄이 기준으로 정렬 */
+
+        /* align-content: -> item보다 작은 container가 있을 때 
+        flex-wrap:wrap일 때 items가 두 줄 이상이면 교차축 기준 정렬 방향 설정 방식 */
+        /* align-content: stretch; -> 교차축 방향으로 공간 전체를 채우며 늘어남 */
+        /* align-content: flex-start; -> 교차축 방향 기준 시작점으로 정렬 */
+        /* align-content: flex-end; -> 교차축 방향 기준 끝점으로 정렬 */
+        /* align-content: center; -> 교차축 방향 기준 중앙으로 정렬 */
+
+        display: flex;
+        width: 100vw;
+        background-color: whitesmoke;
+      }
+      .container > * {
+        width: 100px;
+        height: 100px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+      }
+
+      .item1 {
+        background-color: red;
+      }
+      .item2 {
+        background-color: orange;
+      }
+      .item3 {
+        background-color: yellow;
+      }
+      .item4 {
+        background-color: yellowgreen;
+      }
+      .item5 {
+        background-color: green;
+      }
+      .item6 {
+        background-color: blue;
+      }
+      .item7 {
+        background-color: navy;
+      }
+      .item8 {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div class="item8"></div>
+    </div>
+  </body>
+</html>

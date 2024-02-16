@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my cute worm</title>
+    <style>
+      .cont {
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+      .cont * {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        /* left: 100px; */
+      }
+
+      .item1 {
+        position: relative;
+        top: 90px;
+        left: +50px;
+        background-color: black;
+        z-index: 0;
+      }
+      .item1 > * {
+        position: absolute;
+        border-radius: 50%;
+        top: 20%;
+        left: 20%;
+      }
+      .item2 {
+        top: 150px;
+        left: +100px;
+        background-color: navy;
+        z-index: 1;
+      }
+      .item3 {
+        top: 190px;
+        left: +130px;
+        background-color: blue;
+        z-index: 2;
+      }
+
+      .item4 {
+        top: 250px;
+        left: 150px;
+        background-color: lightskyblue;
+        z-index: 3;
+      }
+      .item5 {
+        top: 280px;
+        left: +200px;
+        background-color: paleturquoise;
+        z-index: 4;
+      }
+
+      .eye1 {
+        width: 40%;
+        height: 40%;
+        background-color: white;
+        z-index: 7;
+      }
+      .eye2 {
+        width: 20%;
+        height: 20%;
+        top: 28%;
+        background-color: black;
+        z-index: 10;
+      }
+      .grass {
+        top: 280px;
+        width: auto;
+        height: auto;
+        position: absolute;
+        border-radius: 0;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="item1">
+        <div class="eye1"></div>
+        <div class="eye2"></div>
+      </div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <img class="grass" src="./grass.png" alt="잔디밭" />
+    </div>
+  </body>
+</html>

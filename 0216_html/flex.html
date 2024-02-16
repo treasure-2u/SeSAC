@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display: flex</title>
+    <style>
+      .container {
+        /* display: flex; - 자식 요소의 정렬 방법 지정 중 수평 속성, 주축방향 : 왼->오(부모는 수직) */
+        /* display: inline-flex; - 부모 요소의 수평 정렬 속성 */
+        /* 주축 : main axis, 교차축 : cross axis */
+        display: flex;
+        width: 100vw;
+        width: 500px;
+        height: 100vh;
+        height: 500px;
+        background-color: whitesmoke;
+        flex-direction: column; /* 주축의 방향 : 위 -> 아래 */
+        flex-direction: column-reverse; /* 정렬 방향 : 아래 -> 위 */
+        flex-direction: row-reverse; /* 정렬 방향 : 우 -> 좌 */
+        flex-direction: row; /* 주축의 방향 지정 기본값 : 좌 -> 우 */
+        /* flex 속성은 컨테이너 너비에 맞춰 자동으로 컨텐츠 크기 조정됨 */
+        /* flex-wrap: wrap; 컨텐츠 크기 > 컨테이너 너비 -> 줄바꿈하여 크기 유지 */
+        /* flex-wrap: wrap-reverse; wrap의 역방향(위로) 줄바꿈 정렬 */
+      }
+      .container2 {
+        flex-wrap: wrap;
+      }
+      .container > * {
+        width: 500px;
+        height: 500px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+        flex-wrap: wrap;
+      }
+
+      .item1 {
+        background-color: red;
+      }
+      .item2 {
+        background-color: orange;
+      }
+      .item3 {
+        background-color: yellow;
+      }
+      .item4 {
+        background-color: yellowgreen;
+      }
+      .item5 {
+        background-color: green;
+      }
+      .item6 {
+        background-color: blue;
+      }
+      .item7 {
+        background-color: navy;
+      }
+      .item8 {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div class="item8"></div>
+    </div>
+    <br />
+    <div class="container container2">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div class="item8"></div>
+    </div>
+  </body>
+</html>
