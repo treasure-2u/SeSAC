@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>굴러간다</title>
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+
+        /* animation 사용 */
+        animation: ani 5s linear infinite;
+      }
+
+      @keyframes ani {
+        0% {
+          /* left: 0; */
+          transform: translate(0px) rotate(0deg);
+        }
+        25% {
+          /* left: 95%; */
+          /* top: 0; */
+          transform: translate(calc(100vw - 130px), 0px) rotate(-360deg);
+        }
+        50% {
+          /* top: 1000px; */
+          /* left: 95%; */
+          transform: translate(calc(100vw - 130px), calc(100vh - 120px))
+            rotate(-720deg);
+        }
+        75% {
+          /* top: 1000px; */
+          /* left: 0; */
+          transform: translate(0px, calc(100vh - 120px)) rotate(-1080deg);
+        }
+        100% {
+          transform: translate(0px) rotate(-1440deg);
+        }
+      }
+
+      @keyframes slide-in {
+        from {
+          margin-left: 100%;
+          width: 300%;
+        }
+        to {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      p {
+        animation: slide-in 3s infinite;
+      }
+
+      h2 {
+        margin-top: calc(100vh - 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ram">
+      <img src="./람머스.jpg" alt="롤 챔피언 람머스 캐릭터 사진" />
+    </div>
+
+    <h2>글자 움직이기</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste deserunt
+      amet aperiam, quidem ipsum hic, recusandae perferendis eum unde modi esse!
+      Saepe placeat voluptatum reprehenderit, ut officiis illum et. Dolore.
+    </p>
+  </body>
+</html>

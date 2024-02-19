@@ -1,0 +1,128 @@
+.img-box {
+  background-color: lightblue;
+  width: 250px;
+  height: 250px;
+}
+
+img {
+  width: 100%; /* 부모 너비(400px)랑 같음 */
+  height: 100%;
+  cursor: pointer;
+  /* border: 1px solid yellow; */
+}
+
+img:hover {
+  /* 1. skew() : x, y축으로 각각 원하는 각도만큼 요소 기울임 조정 */
+  transform: skewX(30deg);
+  transform: skewY(30deg);
+  transform: skew(30deg, 30deg);
+
+  /* 2. scale() : 원하는 배수(정수값)로 확대(1~), 축소(~1) 크기 조정 가능 */
+  transform: scaleX(2);
+  transform: scaleY(0.5);
+  transform: scale(0.5, 0.5);
+
+  /* 3. translate() : 요소를 원하는 만큼 x,y,z축 기준으로 이동시킴 */
+  transform: translateX(100px);
+  transform: translateY(-100px);
+  /* z축 이동은 perspective(원근법)를 사용하지 않으면 확인 불가능 */
+  transform: perspective(500px) translateZ(100px);
+  /* attribute value 2개 일 때 */
+  transform: translate(100px, -100px);
+  /* attribute value 3개 일 때 */
+  transform: perspective(500px) translate3d(100px, 100px, 100px);
+
+  /* 4. rotate() : x, y축, 시계방향으로 원하는 각도 값만큼 요소 회전 가능 */
+  transform: rotate(45deg);
+  transform: perspective(500px) rotateX(45deg); /* 원근법 사용해야 더욱 가시적으로 확인 가능 */
+  transform: perspective(500px) rotateY(45deg);
+
+  transform: perspective(500px) rotatex(180deg); /* 뒷면 보임 여부 */
+  backface-visibility: visible;
+  backface-visibility: hidden;
+}
+
+/* 이미지 3개 나열하기 실습 */
+img {
+  width: 300px;
+  height: 200px;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  background-color: lightgray;
+}
+
+.beach {
+  position: absolute;
+  transform: skewY(30deg);
+  border: none;
+  transition: 1s;
+}
+
+.beach:hover {
+  transform: skew(0);
+}
+
+.beach_1 {
+  top: 180px;
+  left: 200px;
+  z-index: 3;
+}
+
+.beach_2 {
+  top: 150px;
+  left: 350px;
+  z-index: 2;
+}
+.beach_3 {
+  top: 120px;
+  left: 500px;
+  z-index: 1;
+}
+
+/* transition */
+/* transition은 변화가 일어날 때 사용하는 속성, 프로퍼티 값 변경 시 원하는 일정 시간에 걸쳐 변화 생기게 함
+    - transition-property : 변화 대상 css 속성 지정 (default: all)
+    - transition-duration : 변화가 일어날 시간 (단위: s)
+    - transition-timing-function : 변화 시간별 속도 지정 (default: ease)
+        - ease : 천천히 시작해서 빨라졌다가 느려짐
+        - linear : 일정한 속도
+        - ease-in : 천천히 시작해서 정상 속도
+        - ease-out : 정상 속도에서 천천히 끝
+        - ease-in-out : 천천히 시작해서 정상 속도로 갔다가 느려짐
+    - transition-delay : 지연 시간 (단위: s)
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-color: black;
+}
+
+.box1:hover {
+  background-color: pink;
+  height: 120px;
+  width: 120px;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  transition-delay: 1s;
+  /* transition-property: width; 단축 속성 */
+  /* transition: property duration timing-function delay; */
+  transition: width 1s ease-in 1s;
+  transition: height 1s ease-in 1s;
+  transition: background-color 1s ease-in 1s;
+  /* 높이너비는 호버 하자마자 바뀜, 배경색은 delay 때문에 1초 뒤 1초 동안 ease-in 속도로 바뀜 */
+}
+
+.box2:hover {
+  background-color: lightblue;
+  transform: translateX(200px) scaleX(2);
+}
+
+.box3:hover {
+  opacity: 0;
+}

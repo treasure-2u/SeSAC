@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 헤더 만들기</title>
+    <link rel="stylesheet" href="./04_mediaquary_prac2.css" />
+    <!-- 폰트어썸 아이콘 가져오는 CDN -->
+    <script
+      src="https://kit.fontawesome.com/837ff3adc1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      ol {
+        list-style: none;
+      }
+
+      header {
+        width: 100%;
+        height: 100px;
+        background-color: lightblue;
+      }
+
+      header .inner {
+        position: relative;
+        height: 100%;
+        margin: auto;
+        max-width: 1200px;
+        /* 1200px 이상 늘어나지 말아라(스크롤 생김 방지) */
+        padding: 0 1.5rem;
+      }
+
+      header .inner .logo {
+        line-height: 100px;
+        position: absolute;
+        /* i는 font-size로 크기 조정 */
+        font-size: 50px;
+        color: aliceblue;
+        align-items: center;
+        text-align: left;
+        justify-content: space-around;
+      }
+
+      .small-menu,
+      .menu-bar {
+        display: none;
+      }
+
+      .menu > * {
+        text-align: center;
+        line-height: 50px;
+        margin-right: 20px;
+
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      ul {
+        display: flex;
+      }
+
+      li {
+        display: flex;
+      }
+
+      @media screen and (max-width: 768px) {
+        .small-menu,
+        .menu-bar {
+          display: block;
+        }
+
+        .menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- 웹 헤더 -->
+      <div class="inner">
+        <i class="fa-solid fa-igloo logo"></i>
+
+        <ul class="menu">
+          <!-- li{메뉴$}*4 -->
+          <li>menu1</li>
+          <li>menu2</li>
+          <li>menu3</li>
+          <li>menu4</li>
+        </ul>
+      </div>
+
+      <i class="fa-solid fa-bars menu-bar"></i>
+      <!-- 모바일 헤더 -->
+      <ul class="small-menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+      </ul>
+    </header>
+  </body>
+</html>
