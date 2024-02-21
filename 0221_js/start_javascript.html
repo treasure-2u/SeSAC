@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>start JS</title>
+    <!-- js 사용 방법 -->
+    <!-- 1. head tag > script tag -->
+    <script>
+      alert("alert 사용 : head > script tag 내부에 작성");
+      console.log("console.log 사용 : head > script tag 내부에 작성");
+    </script>
+
+    <!-- 2. head tag > script tag: scr attribute에 js file 경로 작성 -->
+    <script src="./start_javascript.js"></script>
+
+    <script>
+      alert("head > script tag 내부 link 방식 아래에 작성");
+    </script>
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+    </style>
+  </head>
+  <script>
+    alert("head > script tag 내부 head와 body tag 사이에 작성");
+  </script>
+  <body>
+    <script>
+      alert("body 안에 작성");
+    </script>
+  </body>
+  <script>
+    alert("body 밖에 작성");
+  </script>
+</html>

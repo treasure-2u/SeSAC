@@ -48,6 +48,12 @@
         justify-content: space-around;
       }
 
+      header .inner .menu {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
       .small-menu,
       .menu-bar {
         display: none;
@@ -78,7 +84,38 @@
           display: block;
         }
 
-        .menu {
+        header .inner .logo {
+          left: calc(50% - 25px);
+          cursor: pointer;
+        }
+
+        header .menu-bar {
+          position: absolute;
+          font-size: 30px;
+          line-height: 100px;
+          right: 10%;
+          cursor: pointer;
+        }
+
+        header .small-menu {
+          display: flex;
+          flex-direction: column;
+        }
+
+        header .small-menu li {
+          background-color: aliceblue;
+          height: 60px;
+          text-align: center;
+          line-height: 60px;
+          cursor: pointer;
+        }
+
+        header .small-menu li:hover {
+          background-color: darkblue;
+          color: white;
+        }
+
+        header .inner .menu {
           display: none;
         }
       }
@@ -97,9 +134,9 @@
           <li>menu3</li>
           <li>menu4</li>
         </ul>
+        <i class="fa-solid fa-bars menu-bar"></i>
       </div>
 
-      <i class="fa-solid fa-bars menu-bar"></i>
       <!-- 모바일 헤더 -->
       <ul class="small-menu">
         <li>메뉴1</li>
