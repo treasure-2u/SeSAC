@@ -15,7 +15,7 @@ var varName = "pepe";
 console.log(varName);
 // var 특징 : 동일한 이름의 변수 재선언 가능, 변수 선언하지 않아도 값 할당 가능(유지보수에 최악)
 
-let letName; // let type 변수 선언
+let letName; // (let : 변수 선언 키워드) 변수 선언
 letName = "SeSAC";
 console.log(letName);
 
