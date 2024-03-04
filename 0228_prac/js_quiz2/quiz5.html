@@ -92,8 +92,6 @@
     <script>
       let star = "*";
       let emptyStr = " ";
-      let num = 1;
-      let e_num = 0;
 
       function drawStars(lines) {
         // TODO: drawStars() 함수 내부 코드를 채워주세요.
@@ -102,47 +100,28 @@
 
       function drawStars2(lines) {
         // TODO: drawStars2() 함수 내부 코드를 채워주세요.
-        for (let i = lines; i > 0; i--) {
-          console.log(emptyStr.repeat(i - 1) + star.repeat(num));
-          num++;
-        }
-        num = 1;
-      }
-      /* 안되는 코드 (repeat에 -값 들어가기 때문)
-            function drawStars2(lines) {
-              // TODO: drawStars2() 함수 내부 코드를 채워주세요.
-              for (let i = lines; i > 0; i--) {
-                for (let j = 1; j <= lines; j++) {
-                  if (i - j >= 0)
-                    console.log(emptyStr.repeat(i - j) + star.repeat(j));
-                }
-              }
-            }
-      */
-      function drawStars3(lines) {
-        // TODO: drawStars3() 함수 내부 코드를 채워주세요.
+        for (let i = 1; i <= lines; i++)
+          console.log(emptyStr.repeat(lines - i) + star.repeat(i));
       }
 
-      // 이거 위치 수정해야함
+      function drawStars3(lines) {
+        // TODO: drawStars2() 함수 내부 코드를 채워주세요.
+        for (let i = 1; i <= lines; i++)
+          console.log(emptyStr.repeat(lines - i) + star.repeat(i * 2 - 1));
+      }
+
       function drawStars4(lines) {
         // TODO: drawStars4() 함수 내부 코드를 채워주세요.
-        for (let i = lines; i > 0; i--) {
-          e_num = lines;
-          console.log(emptyStr.repeat(i - 1) + star.repeat(num));
-          num++;
-        }
-        num = 1;
-        for (let i = lines - 1; i > 0; i--) {
-          console.log(star.repeat(i) + emptyStr.repeat(num));
-          num++;
-        }
-        num = 1;
+        for (let i = 1; i <= lines; i++)
+          console.log(emptyStr.repeat(lines - i) + star.repeat(i * 2 - 1));
+        for (let i = lines - 1; i > 0; i--)
+          console.log(emptyStr.repeat(lines - i) + star.repeat(i * 2 - 1));
       }
 
       function drawStars5(lines) {
         // TODO: drawStars5() 함수 내부 코드를 채워주세요
         for (let i = lines; i > 0; i--) {
-          console.log(emptyStr.repeat(i) + star.repeat(lines));
+          console.log(emptyStr.repeat(lines - i) + star.repeat(lines));
         }
       }
 
@@ -156,8 +135,8 @@
       // drawStars3(3);
       // drawStars3(5);
 
-      drawStars4(3);
-      drawStars4(5);
+      // drawStars4(3);
+      // drawStars4(5);
 
       // drawStars5(3);
       // drawStars5(5);

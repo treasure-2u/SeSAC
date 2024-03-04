@@ -127,7 +127,8 @@
             console.log("일");
             break;
           default:
-            console.log(null);
+            return null;
+            break; // default문을 지나면 switch문을 나가기 때문에 꼭 필요 X
         }
       }
 

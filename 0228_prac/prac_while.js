@@ -54,5 +54,5 @@ console.log(`for of문으로 구한 배열 요소의 합 : ${arrSum}`);
 
 // 4-4. forEach문 합 구하기
 arrSum = 0;
-numArr.forEach((num) => (arrSum += num));
+numArr.forEach((num) => (arrSum += num)); // forEach = method로 인자를 가지며 인자가 함수! => 콜백함수
 console.log(`forEach문으로 구한 배열 요소의 합 : ${arrSum}`);
