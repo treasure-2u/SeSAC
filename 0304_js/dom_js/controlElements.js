@@ -78,14 +78,14 @@ pEl.id = "append-p"; // 아이디 추가
 console.log(pEl); // 유령
 
 // pEl 요소 html에 삽입
-// append : 선택된 요소의 자식 요소로 매개변수 요소가 삽입됨
-// createElement를 사용해 만든 요소 -> 삽입 한 번만 적용됨 // 생성된 요소 갯수만큼만 출력
+// append : 선택된 요소의 자식 요소로 매개변수 요소가 삽입됨, 마지막 자식 요소로 추가됨, 여러 자식 요소 만들기 가능,
+// 부모요소.append -> 자식 요소 생성, 텍스트 삽입 가능
+// createElement를 사용해 만든 요소 -> 여러 번 출력해도 삽입된 요소가 1개라면 1번만 적용됨 // 생성된 요소 갯수만큼만 출력
 container.append(pEl);
 
 const pEl2 = document.createElement("p");
 pEl2.innerHTML = "new 2nd p tag";
 container.append(pEl2); // 마지막 자식 요소로 추가됨
-
 container.append(pEl, pEl2); // 여러 자식요소도 한 번에 삽입 가능
 
 // 동일한 이름의 div 3개 만들기
@@ -94,3 +94,70 @@ for (let i = 0; i < 3; i++) {
   hi.innerText = "hi";
   container.append(hi);
 }
+
+// append 사용해 text 삽입
+const p1 = document.createElement("p");
+p1.innerHTML = "0306 추가 text"; // innerText 사용 가능(좀 더 시멘틱)
+// p1.append("0306 추가 text"); 도 가능
+container.append(p1, "부모요소인 container class 안으로 들어가는 요소");
+
+// appendChild() : 선택된 요소의 자식 요소로 매개변수 요소가 추가되는데 맨 뒤에 자식요소로 추가(append와 같음)
+// but 한 번에 하나의 요소만 추가할 수 있음
+const p2 = document.createElement("p");
+p2.innerText = "appendChild 사용해서 추가할 1st p tag";
+const p3 = document.createElement("p");
+p3.innerText = "appendChild 사용해서 추가할 2nd p tag";
+const p4 = document.createElement("p");
+p4.innerText = "appendChild 사용해서 추가할 3rd p tag";
+
+// append와의 차이점 2가지
+container.appendChild(p2);
+container.appendChild(p3, p4); // p4는 추가 안됨
+// container.append(p2, p3, p4); // appendChild 하나하나 찍는 것과 같은 의미
+// container.appendChild("가능?"); // text 추가 안됨 // appendChild가 더 시멘틱(요소 하나만 추가하고 싶거나 잘못 들어가면 안될 때 사용)
+
+// prepend()
+// 선택된 요소의 가장 첫 번째 자식으로 추가됨 (append와 반대됨)
+const div2 = document.createElement("div");
+div2.classList.add("prepend");
+div2.innerText = "prepend로 추가된 text";
+
+container.prepend(div2);
+
+// before, after
+// before : 선택된 요소의 앞에 추가됨
+const h2 = document.querySelector("#h2");
+const h3 = document.createElement("h3");
+h3.innerText = "before로 추가한 h3";
+
+h2.before(h3);
+
+// after : 선택된 요소의 뒤에 추가됨
+const h4 = document.createElement("h4");
+h4.innerText = "after로 추가한 h4";
+
+h2.after(h4);
+
+/*
+요소 다루기 - 요소 추가하기 총정리
+- document.createElement(tag name) : 해당 tag 생성, 요소를 만드는 것이기 때문에 브라우저에선 확인 불가능
+- parentElementName.append(자식요소) : 해당 요소를 부모 요소의 마지막 자식으로 추가(여러 개 요소 한 번에 추가 가능)
+  -> text 추가 가능(부모 요소의 content로 들어감)
+- parentElementName.appendChild(자식요소) : 해당 요소를 부모 요소의 마지막 자식으로 추가(한 번에 한 요소만 추가 가능)
+  -> text 추가 불가능
+- parentElementName.prepend(자식요소) : 해당 요소를 부모 요소의 첫 번째 자식으로 추가
+- elementName.before(추가할 요소) : 선택된 요소의 앞에 형제 요소로 추가됨
+- elementName.after(추가할 요소) : 선택된 요소의 뒤에 형제 요소로 추가됨
+
+append, appendChild, prepend -> 인자로 전달한 요소를 부모의 자식으로 추가함
+before, after -> 인자로 전달한 요소가 선택된 요소의 형제로 추가됨
+*/
+
+// 요소 삭제
+// const deleteDiv = document.querySelector(".container div");
+// deleteDiv.remove(); // 선택한 요소 삭제
+// #flower의 두 번째 li인 장미 삭제하기
+const deleteLi = document.querySelector("#flowers li:nth-child(2)");
+deleteLi.remove();
+
+// 모든 요소(ex. all tag)는 node / attribute(ex. href), text는 node이나 요소는 아님

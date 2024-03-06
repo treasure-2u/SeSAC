@@ -32,20 +32,20 @@ console.log("querySelector");
 console.log(document.querySelector("div"));
 
 // 5. querySelectorAll
-// 해당 css 선택자 중에서 일치하는 모든 요소 선택
+// 해당 css 선택자 중에서 일치하는 모든 요소 선택하여 배열 형태로 반환(유사배열)
 console.log("querySelectorAll");
 console.log(document.querySelectorAll("div"));
 console.log(document.querySelectorAll("div.pink"));
 console.log(document.querySelectorAll(".others"));
 console.log(document.querySelectorAll("div.pink")[2]); // 3번째 핑크 div 접근 가능
 
+// for of 문으로 pink class 모두 print하기
+let pinks = document.querySelectorAll(".pink");
+
+for (let el of pinks) console.log(el);
+
 // NodeList와 HTMLCollection
 // getElemnetBy~ -> HTMLCollection -> js에서 node를 생성 및 제거와 같은 변경 감지
 // querySelectorAll -> NodeList -> 변경 감지 불가
 // HTMLCollection, NodeList -> 유사배열
 // 유사배열? length 속성 O, [i] 같은 인덱스로 접근 가능, 표준 객체 메서드 사용 불가(ex. map, but forEach 가능)
-
-// for of 뭄으로 pink class 모두 print하기
-let pinks = document.querySelectorAll(".pink");
-
-for (let el of pinks) console.log(el);

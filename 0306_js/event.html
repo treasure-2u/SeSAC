@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS event</title>
+    <script defer src="./event.js"></script>
+  </head>
+  <style>
+    body {
+      height: 5000px;
+    }
+
+    .btn {
+      width: 80px;
+      height: 40px;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 40px;
+      margin: 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn-black {
+      background-color: black;
+      color: white;
+    }
+
+    .btn-pink {
+      background-color: pink;
+      color: navy;
+    }
+
+    .btn-gold {
+      background-color: gold;
+      color: purple;
+    }
+
+    .btn-skyblue {
+      background-color: skyblue;
+      color: orange;
+    }
+
+    input:focus {
+      border-color: black;
+    }
+  </style>
+  <body>
+    <div class="btn btn-black">btn1</div>
+    <div class="btn btn-pink">btn2</div>
+    <div class="btn btn-gold">btn3</div>
+    <div class="btn btn-skyblue">btn4</div>
+    <div class="container"></div>
+
+    <h2>todo list</h2>
+    <form id="todo-form">
+      <!-- 
+        사용자로부터 입력을 받고, 서버에 제출하기 위한 태그
+
+        속성
+        - action : 폼 데이터가 전송될 서버의 URL을 지정
+        - method : 데이터를 서버로 전송하는 방법을 지정
+                   주로 GET, POST를 사용
+
+        form 태그 내부 입력 필드에 name 속성으로
+        서버에 해당 데이터가 어떤 정보인지 함께 보내줌
+         ex)
+         <input type="text" name="user_name" />
+         <input type="text" name="user_id" />
+         -> user_name: 'layla' 와 같이 서버에 전달
+         -> user_name: 'layla', user_id: 'qwer1234'
+
+        예시
+          <form action="https://xn--apiurl-ke6yv99agha337c..." method="get">
+            <input type="text" name="user_name" />
+            <input type="text" name="user_id" />
+            <button type="submit">제출</button>
+          </form>
+
+          버튼을 클릭해 submit할 경우 자동으로 서버에 해당 데이터가 전달됨
+       -->
+      <input type="text" name="todo" />
+      <button>ADD</button>
+    </form>
+
+    <ul class="todos"></ul>
+    <br />
+
+    <h2>변경 이벤트</h2>
+    <input type="text" id="change-input" />
+    <div class="change-input-value"></div>
+  </body>
+</html>
