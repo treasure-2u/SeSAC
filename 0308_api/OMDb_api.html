@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get movie data</title>
+    <script defer src="./OMDb_api.js"></script>
+    <style>
+      ul {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      ul p {
+        width: 200px;
+      }
+
+      ul img {
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="getMovieData()">영화 검색하기</button>
+    <h3></h3>
+    <ul></ul>
+  </body>
+</html>

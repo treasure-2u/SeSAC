@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기 실습</title>
+    <script defer src="./calc.js"></script>
+    <style>
+      .inputEl {
+        margin-bottom: 3px;
+      }
+
+      #calcEl:focus {
+        background-color: lightgray;
+      }
+
+      button {
+        padding: 3px, 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>계산기 만들기</h2>
+    <!-- <div class="inputEl">값1: <input type="text" id="calcEl" /></div>
+    <div class="inputEl">값2: <input type="text" id="calcEl" /></div>
+    <div class="inputEl">연산자: <input type="text" id="calcEl" /></div>
+    <div class="inputEl">결과: <input type="text" id="calcEl" /></div> -->
+
+    <!-- 리더님이랑 같이 짠 코드 -->
+    <label for="value1">값1: </label>
+    <input type="number" id="value1" />
+    <br />
+    <label for="value2">값2: </label>
+    <input type="number" id="value2" />
+    <br />
+    <label for="operator">연산자: </label>
+    <input type="text" id="operator" />
+    <br />
+    <label for="result">결과: </label>
+    <input type="number" id="result" disabled="true" />
+    <!-- disabled로 해당 input 비활성화하여 클릭 불가 => 사용자의 결과 임의 수정 불가능 -->
+
+    <br />
+    <button type="button" id="calc">계산하기</button>
+    <button type="button" id="reset" onclick="reset()">초기화</button>
+  </body>
+</html>

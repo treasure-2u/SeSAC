@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./comment.js"></script>
+    <title>댓글 달기</title>
+  </head>
+  <body>
+    <h2>댓글 등록하기</h2>
+
+    <form>
+      <label for="userId">아이디</label>
+      <input type="text" id="userId" />
+      <label for="content">댓글</label>
+      <input type="text" id="content" />
+      <button type="button" onclick="submitComment()">등록</button>
+    </form>
+    <br />
+
+    <ul id="commentContainer"></ul>
+    <!-- 댓글 저장할 빈 ul 생성 -->
+  </body>
+</html>
