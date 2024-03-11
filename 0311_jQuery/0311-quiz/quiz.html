@@ -1,0 +1,75 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1. 이미지 바꾸기</title>
+
+    <!-- TODO: jQuery CDN 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>이미지 바꾸기</h1>
+
+      <img class="fruit" src="./image/q.jpg" alt="" />
+      <br />
+      <div class="btns">
+        <button class="btn" id="apple">사과</button>
+        <button class="btn" id="bananas">바나나</button>
+        <button class="btn" id="grapes">포도</button>
+        <button class="btn" id="peaches">복숭아</button>
+      </div>
+    </div>
+    <script>
+      // $("#apple").click(() => {
+      //   $(".fruit").attr("src", "./image/apple.jpg").css("object-fit", "cover");
+      // });
+      // $("#bananas").click(() => {
+      //   $(".fruit")
+      //     .attr("src", "./image/bananas.jpg")
+      //     .css("object-fit", "cover");
+      // });
+      // $("#grapes").click(() => {
+      //   $(".fruit")
+      //     .attr("src", "./image/grapes.jpg")
+      //     .css("object-fit", "cover");
+      // });
+      // $("#peaches").click(() => {
+      //   $(".fruit")
+      //     .attr("src", "./image/peaches.jpg")
+      //     .css("object-fit", "cover");
+      // });
+
+      $(".btn").click((e) => {
+        // 클릭된 btn의 id값 전부 가져와 변수에 저장
+        const imgName = $(e.target).attr("id");
+        console.log(imgName); // 클릭한 btn의 아이디 값으로 저장
+
+        $(".fruit")
+          .attr("src", `./image/${imgName}.jpg`)
+          .css("object-fit", "cover");
+      });
+      // performance 녹화 보면 ?만 contain->cover 잠깐 바뀌면서 넘어가는데 jQuery 파씽 시간 때문에 생긴 일!!
+    </script>
+  </body>
+</html>
