@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "comment": "commonjs module 사용할 때 type:commonjs 사용",
+  "comment2": "es6 module 사용할 때 type:module 사용",
+  "comment3": "json에서는 주석 허용이 안되어서 comment로 부득이하게 남김"
+}
