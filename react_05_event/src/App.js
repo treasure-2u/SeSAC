@@ -1,11 +1,17 @@
-import FuncEvent from "./components/FuncEvent";
-import ClassEvent from "./components/ClassEvent";
+// import FuncEvent from "./components/FuncEvent";
+// import ClassEvent from "./components/ClassEvent";
+import ClassHandlerEx from "./components/ex/ClassHandlerEx";
+import FuncHandlerEx from "./components/ex/FuncHandlerEx";
 
 function App() {
   return (
     <div className="App">
-      <FuncEvent />
-      <ClassEvent />
+      {/* <FuncEvent />
+      <ClassEvent /> */}
+      <ClassHandlerEx />
+      <br />
+
+      <FuncHandlerEx />
     </div>
   );
 }

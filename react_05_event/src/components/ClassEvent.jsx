@@ -27,7 +27,13 @@ export default class ClassEvent extends Component {
         <div>{this.state.msg}</div>
         <button onClick={this.handleClick}>모집</button>
 
-        <input type="text" onChange={(e) => console.log(e)} />
+        <input
+          type="text"
+          onChange={(e) => {
+            console.log(e);
+            console.log(e.target.value);
+          }}
+        />
       </>
     );
   }
