@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useState } from "react";
 
 export default function Prac1() {
@@ -8,6 +9,9 @@ export default function Prac1() {
     { id: 1, user: "장원영", email: "wonyoung@gmail.com" },
     { id: 2, user: "안유진", email: "yujin@gmail.com" },
   ]);
+
+  const emailInputRef = useRef();
+  const userInputRef = useRef();
 
   // inputUser state 추가 -> 사용자가 입력한 자신의 이름을 저장하는 state
   // 이름을 작성하는 input에 value로 inputUser가 들어가 있음
@@ -43,10 +47,27 @@ export default function Prac1() {
   // e.target.value : 현재 이벤트가 발생한 input 요소의 value 속성값
   const onChangeEmail = (e) => setInputEmail(e.target.value);
 
+  // validation logic
+  const validation = () => {
+    // 두 가지 조건 모두 확인하고 싶을 때 if else if 대신 if문으로 두 번 작성!
+    if (inputUser.trim().length === 0) {
+      userInputRef.current.focus();
+      return false;
+    }
+    if (inputEmail.trim().length === 0) {
+      emailInputRef.current.focus();
+      return false;
+    }
+
+    return true;
+  };
+
   // eventClick 함수 설명
   // email을 입력받는 input에 onKeyDown 속성과 등록 버튼의 onClick 속성에서 사용됨
   // 새로운 데이터를 data state에 추가, input 2개(user, email)를 초기화, nextId state를 1 더한 값으로 업데이트
   const eventClick = () => {
+    if (!validation) return; // 입력된 값 없으면 아래 로직 실행되지 않도록 함수 종료!
+
     // 새로운 데이터를 기존 데이터 배열에 추가
     // 방법 1. concat 메서드 사용
     // 참고) concat(): https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
@@ -113,6 +134,7 @@ export default function Prac1() {
       <input
         type="text"
         name="user"
+        ref={userInputRef}
         placeholder="이름"
         value={inputUser}
         onChange={onChangeUser}
@@ -123,6 +145,7 @@ export default function Prac1() {
       <input
         type="text"
         name="email"
+        ref={emailInputRef}
         placeholder="이메일"
         value={inputEmail}
         onChange={onChangeEmail}
