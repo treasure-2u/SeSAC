@@ -19,6 +19,7 @@ export default function ProductPage() {
 
   return (
     <div>
+      <div>상품 목록 페이지</div>
       <ProductList prodData={tempProductsData} />
     </div>
   );

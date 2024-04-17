@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 
 export default function Board() {
@@ -6,7 +5,6 @@ export default function Board() {
 
   return (
     <>
-      <Header />
       <h1>Board Page</h1>
       <div
         onClick={() => {

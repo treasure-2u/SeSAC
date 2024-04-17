@@ -9,6 +9,10 @@ export default function Header() {
         <Link to="/board">게시판</Link>
         <br />
         <Link to="/profile">mypage</Link>
+        <br />
+        <Link to="/photos">Photos</Link>
+        <br />
+        <Link to="/products">ProductPage</Link>
       </nav>
     </header>
   );

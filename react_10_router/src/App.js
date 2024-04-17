@@ -13,9 +13,8 @@ import PhotoPage from "./pages/PhotoPage";
 function App() {
   return (
     <div className="App">
-      <h1>routing</h1>
-
       {/* routing 연습
+      <h1>routing</h1>
       <h1>routing</h1>
       <Routes>
         <Route path="/test" element={<Test />} />
@@ -29,20 +28,14 @@ function App() {
       <Route path="/board/1" element={<BoardDetail />} />
     </Routes> */}
 
-      {/* 라우팅하기, /products /photos */}
       <Header />
-      <ProductPage />
-      <ProductDetailPage />
-      <PhotoPage />
-      <NotFound />
 
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/board" element={<Board />} />
-        <Route path="/board/1" element={<BoardDetail />} /> */}
-
         <Route path="/" element={<Home />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/board/1" element={<BoardDetail />} />
+        <Route path="/profile" element={<Profile />} />
+
         <Route path="/products" element={<ProductPage />} />
         <Route path="/products/1" element={<ProductDetailPage />} />
         <Route path="/photos" element={<PhotoPage />} />
