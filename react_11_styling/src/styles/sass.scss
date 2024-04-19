@@ -1,0 +1,157 @@
+.sass-box {
+  width: 100px;
+  height: 100px;
+  background-color: palevioletred;
+}
+
+// 변수 사용
+// 미리 정한 디자인 시스템()을 변수에 저장해 사용
+$color-main: #fe3;
+$boxShadow: 2px 2px 6px gray;
+$mobile: 720px;
+
+.sass-var {
+  background-color: $color-main;
+  box-shadow: $boxShadow;
+}
+
+.sass-var2 {
+  color: $color-main;
+}
+
+@media screen and (max-width: $mobile) {
+  .sass-var2 {
+    background-color: red;
+  }
+}
+
+// 연산
+// 같은 단위는 calc 없이 계산 가능, 그 외 연산에는 calc 사용할 것
+.sass-calc {
+  width: 500px - 80px;
+  height: calc(50vh - 180px);
+  border: 5px solid #d4d4;
+}
+
+// 중첩
+// .sass-div1 > .sass-div2 > .sass-div3
+.sass-div1 {
+  border: 5px solid pink;
+  padding: 50px;
+
+  .sass-div2 {
+    border: 5px solid skyblue;
+    padding: 10px;
+
+    .sass-div3 {
+      background-color: antiquewhite;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &:hover {
+    border: 5px solid deeppink;
+  }
+}
+
+// mixin
+// scss에서 사용하는 함수
+@mixin bold-border() {
+  border: 10px solid black;
+  // 값들이 고정이라 재사용성 매우 낮음
+}
+
+@mixin add-border($borderWidth, $bordercolor) {
+  border: $borderWidth $bordercolor solid;
+  // 인자를 넣어줄 수 있는 확장된 코드
+}
+
+// 매개변수에 기본값 지정
+@mixin add-border2($borderWidth: 5px, $bordercolor: yellow) {
+  border: $borderWidth $bordercolor solid;
+}
+
+@mixin default-flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sass-mixin {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  // 1. 그냥 지정 : border: 10px solid black;
+  // 2. 고정값 사용 : @include bold-border();
+  // @include bold-border(5px, green);
+  //   @include add-border2(15px);
+
+  // 협업 시에는 해당 mixin의 스타일 기능을 작성해주는 것이 좋음
+  @include add-border2($bordercolor: yellow, $borderWidth: 15px);
+}
+
+// 확장 (두 개의 클래스 적용 아닌 하나의 클래스로 상속 받아서 작성 가능)
+.sass-btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+.sass-btn-extends {
+  @extend .sass-btn;
+  background-color: darksalmon;
+}
+
+.sass-for-container {
+  border: 1px solid black;
+
+  // 첫번째 자식 div 너비 100px
+  // 두번째 자식 div 너비 120px
+  // 세번째 자식 div 너비 140px
+
+  // 1. nth-child 이용하여 styling
+  // div:nth-child(1) {
+  //   background-color: pink;
+  //   width: 100px;
+  //   height: 100px;
+  // }
+  // &:nth-child(2) {
+  //   background-color: pink;
+  //   width: 120px;
+  //   height: 100px;
+  // }
+  // &:nth-child(3) {
+  //   background-color: pink;
+  //   width: 140px;
+  //   height: 100px;
+  // }
+
+  // 2. 반복문 @for 사용
+  // #{} : 문자 보간법(코드 어디든 변수값 사용 가능 - 문자 사이 변수 작성, 연산 아닐 때 값 넣기)
+  // from 1 to 3 : 1~2
+  // from 1 through 3 : 1~3
+  @for $i from 1 through 3 {
+    div:nth-child(#{$i}) {
+      background-color: pink;
+      height: 100px;
+      width: (80px + 20px * $i);
+    }
+  }
+}
+
+// 조건문으로 배경색에 따른 폰트색 변경(인자 많이 줄 필요가 없음)
+@mixin useIf($bgcolor: #fff) {
+  background-color: $bgcolor;
+
+  @if ($bgcolor == #000) {
+    // 혹시 모를 에러 방지 위해 타입 아닌 값만 비교할 수 있도록
+    color: #fff;
+  } @else {
+    color: #000;
+  }
+}
+
+.sass-use-if {
+  @include useIf($bgcolor: #000);
+}

@@ -1,0 +1,28 @@
+/* 파일 이름 컨벤션 : 한글 쓰지 않고, css는 component 이름과 같이 가며 component는 파스칼 케이스 */
+
+div {
+  border: 1px solid black;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: cornflowerblue;
+  /* margin: auto; 로 중앙 정렬 가능 */
+}
+
+.container {
+  background-color: aliceblue;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-items: center; */
+}
+
+.item {
+  color: rebeccapurple;
+  text-align: center;
+}
+
+.item1 {
+  font-weight: bold;
+}
