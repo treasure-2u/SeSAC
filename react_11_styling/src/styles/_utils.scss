@@ -1,0 +1,36 @@
+// css 변수화 - page에 통일감 줄 수 있어 페이지 완성도 높아짐
+
+// color 변수
+$color-main-util: deeppink;
+$color-light: lightpink;
+$color-light-gray: #cdcdcd;
+$color-gray: #8b8b8b;
+$color-dark-gray: #3d3d3d;
+
+// break point
+$break-point-mobile: 700px;
+
+@media screen and (max-width: $break-point-mobile) {
+  // styling 작성
+}
+
+// mixin
+@mixin btn($bgColor) {
+  padding: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: $bgColor;
+  border-radius: 5px;
+  @if $bgColor==$color-main-util {
+    border: 1px solid $color-light;
+    color: #fff;
+  } @else if $bgColor==$color-light {
+    border: 1px solid $color-main-util;
+  } @else if $bgColor==$color-light-gray {
+    border: 1px solid $color-gray;
+    color: $color-gray;
+  } @else {
+    border: 1px solid #000;
+  }
+  box-sizing: border-box; // 원하는 크기대로 들어가게끔 설정
+}
