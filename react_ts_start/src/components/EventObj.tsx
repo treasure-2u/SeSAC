@@ -10,9 +10,10 @@ export default function EventObj() {
     console.log(e.code); // 어디서 이벤트 실행됐는지 알려줌(keyboard key 알려줌)
     console.log(e.key);
   }; // HTMLInputElement가 값 변화 알아챌 수 있음
-    
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value);    }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
 
   return (
     <>
@@ -24,9 +25,9 @@ export default function EventObj() {
       <button onClick={buttonClick}>함수 생성하여 event 객체 사용</button>
 
       {/* keyboard event */}
-          <input type="text" onKeyDown={handleKeydown} />
-          
-          <input 
+      <input type="text" onKeyDown={handleKeydown} />
+
+      <input type="text" onKeyDown={handleChange} />
     </>
   );
 }
